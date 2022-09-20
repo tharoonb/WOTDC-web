@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <title>WOTDC</title>
           <meta name="WOTDC" content="width=device-width,minimum-scale=1, initial-scale=1" />
         </Head>
         <body>
