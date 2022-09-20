@@ -18,6 +18,11 @@ module.exports = {
     'react',
   ],
   rules: {
+    'react/self-closing-comp': "off",
+    'no-trailing-spaces': "off",
+    'react/jsx-max-props-per-line': "off",
+    'react/no-unknown-property': "off",
+    'react/jsx-closing-bracket-location': "off",
     'jsx-a11y/label-has-associated-control': 0,
     'react/jsx-props-no-spreading': 0,
     'react/react-in-jsx-scope': 0,
