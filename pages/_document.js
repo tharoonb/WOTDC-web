@@ -10,7 +10,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <title>WOTDC</title>
+          <script 
+            async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9554987021243742"
+            crossorigin="anonymous">
+          </script>
+          <title>Word of The Day Club</title>
           <meta name="WOTDC" content="width=device-width,minimum-scale=1, initial-scale=1" />
         </Head>
         <body>
