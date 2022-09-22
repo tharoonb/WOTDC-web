@@ -16,7 +16,7 @@ export const getPosts = async () => {
               url
             }
           }
-          createdAt
+          publishedAt
           slug
           title
           excerpt
@@ -69,7 +69,7 @@ export const getPostDetails = async (slug) => {
             url
           }
         }
-        createdAt
+        publishedAt
         slug
         content {
           raw
@@ -98,7 +98,7 @@ export const getSimilarPosts = async (categories, slug) => {
         featuredImage {
           url
         }
-        createdAt
+        publishedAt
         slug
       }
     }
@@ -108,9 +108,9 @@ export const getSimilarPosts = async (categories, slug) => {
   return result.posts;
 };
 
-export const getAdjacentPosts = async (createdAt, slug) => {
+export const getAdjacentPosts = async (publishedAt, slug) => {
   const query = gql`
-    query GetAdjacentPosts($createdAt: DateTime!,$slug:String!) {
+    query GetAdjacentPosts($publishedAt: DateTime!,$slug:String!) {
       next:posts(
         first: 1
         orderBy: publishedAt_DESC
@@ -120,7 +120,7 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         featuredImage {
           url
         }
-        createdAt
+        publishedAt
         slug
       }
       previous:posts(
@@ -132,13 +132,13 @@ export const getAdjacentPosts = async (createdAt, slug) => {
         featuredImage {
           url
         }
-        createdAt
+        publishedAt
         slug
       }
     }
   `;
 
-  const result = await request(graphqlAPI, query, { slug, createdAt });
+  const result = await request(graphqlAPI, query, { slug, publishedAt });
 
   return { next: result.next[0], previous: result.previous[0] };
 };
@@ -158,7 +158,7 @@ export const getCategoryPost = async (slug) => {
                 url
               }
             }
-            createdAt
+            publishedAt
             slug
             title
             excerpt
@@ -195,7 +195,7 @@ export const getFeaturedPosts = async () => {
         }
         title
         slug
-        createdAt
+        publishedAt
       }
     }   
   `;
@@ -244,7 +244,7 @@ export const getRecentPosts = async () => {
         featuredImage {
           url
         }
-        createdAt
+        publishedAt
         slug
       }
     }
