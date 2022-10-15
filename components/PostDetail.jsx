@@ -8,7 +8,7 @@ const PostDetail = ({ post }) => {
 
     if (obj) {
       if (obj.href) {
-        modifiedText = (<u><a href={obj.href} key={index}>{obj.href}</a></u>);
+        modifiedText = (<b><u><a href={obj.href} key={index}>{obj.children[0].text}</a></u></b>);
       }
       if (obj.bold) {
         modifiedText = (<b key={index}>{text}</b>);
