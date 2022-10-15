@@ -7,6 +7,9 @@ const PostDetail = ({ post }) => {
     let modifiedText = text;
 
     if (obj) {
+      if (obj.href){
+        modifiedText = (<u><a href={obj.href} key={index}>{obj.href}</a></u>);
+      }
       if (obj.bold) {
         modifiedText = (<b key={index}>{text}</b>);
       }
@@ -14,10 +17,12 @@ const PostDetail = ({ post }) => {
       if (obj.italic) {
         modifiedText = (<em key={index}>{text}</em>);
       }
-
       if (obj.underline) {
         modifiedText = (<u key={index}>{text}</u>);
       }
+      // else{
+      //   modifiedText = (<u><a href={text} key={index}>Enjoy</a></u>);
+      // }
     }
 
     switch (type) {
